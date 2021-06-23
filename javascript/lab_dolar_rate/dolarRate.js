@@ -1,4 +1,4 @@
-require('dotenv').config({ path: '/Users/lab/code/my-lab/javascript/lab_dolar_rate/.env' })
+require('dotenv').config({ path: './.env' })
 
 const axios = require('axios').default;
 
