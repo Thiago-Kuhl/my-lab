@@ -32,7 +32,7 @@ async function consultDolarRate() {
     const baseURL = process.env.RATE_API_URL
     const currency = 'USD-BRL'
     try {
-        await axios.get(`${baseURL}/jsd\on/last/${currency}`)
+        await axios.get(`${baseURL}/json/last/${currency}`)
             .then((response) => {
                 let { USDBRL: { bid: rate } } = response.data
                 rate = parseFloat(rate).toFixed(2)
