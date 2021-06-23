@@ -1,4 +1,4 @@
-require('dotenv').config({ path: './.env' })
+require('dotenv').config({ path: '/home/ec2-user/my-lab/javascript/lab_dolar_rate/.env' })
 
 const axios = require('axios').default;
 
@@ -32,7 +32,7 @@ async function consultDolarRate() {
     const baseURL = process.env.RATE_API_URL
     const currency = 'USD-BRL'
     try {
-        await axios.get(`${baseURL}/json/last/${currency}`)
+        await axios.get(`${baseURL}/jsd\on/last/${currency}`)
             .then((response) => {
                 let { USDBRL: { bid: rate } } = response.data
                 rate = parseFloat(rate).toFixed(2)
