@@ -1,0 +1,15 @@
+{
+  "name": "funcionarios",
+  "version": "1.0.0",
+  "description": "teste",
+  "main": "funcionarios.js",
+  "scripts": {
+    "start": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Thiago Kuhl",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
