@@ -304,13 +304,50 @@ fun dataTypesAndOperationsChallenge() {
     */
 
     //Video solution
-    val nameToPrint = if(myAge >= 18) myName else ""
+    val nameToPrint = if (myAge >= 18) myName else ""
     val nicknameToPrint = myNickname ?: ""
 
     val userData = "$nameToPrint $nicknameToPrint $myLastName, born on $myYearOfBirth, in $myCountry"
 
     println(userData)
 
+}
+
+fun dataPairsAndTriples() {
+    val fullName = Pair<String, String>("Thiago", "Kühl")
+    val birthday = Triple(3, 9, 2000)
+
+    val (name, lastname) = fullName
+    println("My fullname is $name, $lastname")
+
+    val person = Pair("Thiago Kuhl", birthday)
+
+    val nameUsingOrdering = person.first
+    val birthdayUsingOrdering = person.second
+
+    val (Myname, bday) = person
+    val (day, mounth, _) = bday
+
+    val yearOfBirth = bday.third
+    print("$Myname was born on $day/$mounth, year unknown!")
+
+}
+
+fun dataPairsAndTriplesChallenge(){
+    /*
+    * Create a Pair which holds about a Bank Account.
+    * A Bank Account needs to have a Credit Card connected to it, and a balance. (Hint: You can nest a Triple in a Pair)
+    * A Credit Card should have a Card number, security code, and the type of the card (e.g. "Visa", "Mastercard").
+    *
+    * Print out the data for the Account, while hiding the security code.
+    */
+    val creditCard = Triple("12345 34565 12345 9734", "123", "Visa")
+    val bankAccount = Pair(10000.0, creditCard)
+
+    val (balance, creditCardInfo) = bankAccount
+    val (cardNumber, _, cardType) = creditCardInfo
+
+    println("Balance: R$$balance - Card Number: $cardNumber - Card Type: $cardType")
 }
 
 fun main(arguments: Array<String>) {
@@ -322,4 +359,6 @@ fun main(arguments: Array<String>) {
 //    nullables()
 //    nullablesChallenge()
 //    dataTypesAndOperationsChallenge()
+//    dataPairsAndTriples()
+    dataPairsAndTriplesChallenge()
 }
