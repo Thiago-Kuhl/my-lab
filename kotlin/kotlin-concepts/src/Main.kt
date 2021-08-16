@@ -4,7 +4,7 @@
  * You can also reference parameters, like the [arguments].
  * @param arguments
  * @author Thiago Kühl
- * */
+ */
 
 fun introduction() {
     var myAge: Int = 20
@@ -186,10 +186,140 @@ fun ifStatementChallenge() {
     println(message)
 }
 
+fun nullables() {
+    val myName = "Thiago"
+    val nickname: String? = null
+    val lastname: String? = "Kühl"
+
+    println(nickname)
+
+    val nicknameLength = nickname?.length?.toDouble()
+    println(nicknameLength)
+
+    if (lastname != null) {
+        println("My lastname is ${lastname.length} characters long!")
+    } else {
+        println("I don't have a last name!")
+    }
+
+    if (nickname?.isEmpty() == true) {
+        println("You don't have a nickname. It's length is ${nickname.length}")
+    }
+
+//    val notNullNickname = requireNotNull(nickname)
+//    println(notNullNickname.length)
+
+    val myNickname = nickname ?: myName //elvis operator
+    println(myNickname)
+
+    val lastBirthdayYear = 2020
+    val myAge: Int? = 20
+
+    val myAgeNotNull = myAge ?: return
+
+    val yearOfBirth = lastBirthdayYear - myAgeNotNull
+
+    println("I was born in $yearOfBirth")
+}
+
+fun nullablesChallenge() {
+    /*
+    *Challenge:
+    * Declare a variable of type String? called 'password' and assign a value to it.
+    * Using an if expression, check the level of password strength, and assign an appropriate message to another
+    * constant named 'message'. Then print out the message.
+    *
+    * Levels are designed as follows:
+    *
+    * 0 characters or 'null' --> "Ehm, you need a password to keep safe!"
+    * 1-5 characters --> "Weak password! Try adding a few more symbols to it!"
+    * 6-10 characters --> "Medium-strength password."
+    * 11-15 characters --> "No one is getting through this!"
+    * 15+ characters --> "Ironclad!"
+    */
+
+    val password: String? = "asdfgh1234567899"
+
+    val message: String = if (password.isNullOrEmpty()) {
+        "Ehm, you need a password to keep safe!"
+    } else if (password.length in 1..5) {
+        "Weak password! Try adding a few more symbols to it!"
+    } else if (password.length in 6..10) {
+        "Medium-strength password."
+    } else if (password.length in 11..14) {
+        "No one is getting through this!"
+    } else {
+        "Ironclad!"
+    }
+
+    println(message)
+
+}
+
+fun dataTypesAndOperationsChallenge() {
+    /*
+    * Challenge:
+    * Create several values describing you as a person, in pieces of data. The pieces of data are follows:
+    * - Name
+    * - Last Name
+    * - Nickname (if exists)
+    * - Country
+    * - Age
+    *
+    * Then find your year of birth using your age, and print out your data in the following format.
+    *
+    * Note: If yo're underaged (< 18 years old), omit your 'name', and if you don't have a nickname, remove it from
+    * the format.
+    *
+    * Format:
+    * "$name '$nickname' $lastname, born on $yearOfBirth, in $country", if you have a nickname, otherwise, remove th
+    * nickname from the format.
+    */
+
+    val myName = "Thiago,"
+    val myLastName = "Kühl"
+    val myNickname: String? = "tkuhl,"
+    val myCountry = "Brazil"
+    val myAge = 18
+    val myLastBirthdayYear = 2020
+    val myYearOfBirth = myLastBirthdayYear - myAge
+
+    /*
+    * My solution:
+    val message = if (myNickname.isNullOrEmpty()) {
+        if (myAge < 18) {
+            "$myLastName, born on $myYearOfBirth, in $myCountry"
+        } else {
+            "$myName $myLastName, born on $myYearOfBirth, in $myCountry"
+        }
+    } else {
+        if (myAge < 18) {
+            "'$myNickname' $myLastName, born on $myYearOfBirth, in $myCountry"
+        } else {
+            "$myName '$myNickname' $myLastName, born on $myYearOfBirth, in $myCountry"
+        }
+
+    }
+    println(message)
+    */
+
+    //Video solution
+    val nameToPrint = if(myAge >= 18) myName else ""
+    val nicknameToPrint = myNickname ?: ""
+
+    val userData = "$nameToPrint $nicknameToPrint $myLastName, born on $myYearOfBirth, in $myCountry"
+
+    println(userData)
+
+}
+
 fun main(arguments: Array<String>) {
 //    introduction()
 //    booleans()
 //    logicOperators()
 //    ifStatement()
-    ifStatementChallenge()
+//    ifStatementChallenge()
+//    nullables()
+//    nullablesChallenge()
+//    dataTypesAndOperationsChallenge()
 }
