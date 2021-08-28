@@ -333,7 +333,7 @@ fun dataPairsAndTriples() {
 
 }
 
-fun dataPairsAndTriplesChallenge(){
+fun dataPairsAndTriplesChallenge() {
     /*
     * Create a Pair which holds about a Bank Account.
     * A Bank Account needs to have a Credit Card connected to it, and a balance. (Hint: You can nest a Triple in a Pair)
@@ -350,6 +350,128 @@ fun dataPairsAndTriplesChallenge(){
     println("Balance: R$$balance - Card Number: $cardNumber - Card Type: $cardType")
 }
 
+fun arrays() {
+//    val country1 = "Russia"
+//    val country2 = "USA"
+//    val country3 = "Poland"
+
+    val visitedCountries = arrayOf(
+        "Russia", "USA", "Poland",
+        "The Netherlands", "Romania", "Greece",
+        "Germany", "Spain", "Portugal",
+        "Sebia", "Hungary", "Brazil"
+    )
+
+    println(visitedCountries)
+    println(visitedCountries.size)
+
+    println(visitedCountries[3])
+
+//    println(visitedCountries[30])
+//    println(visitedCountries[-1])
+
+    visitedCountries + "Belgium"
+    println(visitedCountries.size)
+
+    visitedCountries[1] = "The United States of America "
+    println(visitedCountries[1])
+
+    val sizedArray = Array(10) { "" }
+    val emptyArray = emptyArray<String>()
+
+    val arrayOfInts = intArrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    println(arrayOfInts)
+
+    val intArray = IntArray(10)
+    println(intArray)
+
+    println(visitedCountries.lastIndex)
+    println(visitedCountries.last())
+    println(visitedCountries.first())
+
+    val currentCountry = "Spain"
+    println(visitedCountries.contains(currentCountry))
+
+    val hasVisitedSpain = currentCountry in visitedCountries
+    val hasNotVisitedSpain = currentCountry !in visitedCountries
+
+    println(hasVisitedSpain)
+    println(hasNotVisitedSpain)
+}
+
+fun listOfData() {
+    val countries = listOf("Russia", "USA", "The Nederlands")
+
+    println(countries)
+
+    val mutableCountries = countries.toMutableList()
+
+    mutableCountries.add("Germany")
+    mutableCountries.add(1, "Greece")
+
+    println(mutableCountries)
+
+    mutableCountries.addAll(listOf("Poland", "Brazil", "Hungary"))
+
+    println(mutableCountries)
+
+    val hasBeenToJapan = "Japan" in mutableCountries
+    println(hasBeenToJapan)
+
+    mutableCountries.remove("Japan")
+    println(mutableCountries)
+
+    mutableCountries.removeAt(0)
+    println(mutableCountries)
+
+    mutableCountries.removeAll(listOf("Russia", "Brazil", "Hungary"))
+    println(mutableCountries)
+
+    println(mutableCountries)
+
+    mutableCountries[2] = "Croacia"
+    val combinedList = countries + mutableCountries
+    val emptyList = emptyList<String>()
+
+    println(mutableCountries)
+    println(combinedList)
+    println(emptyList)
+
+    mutableCountries.clear()
+    println(mutableCountries)
+
+}
+
+fun listAndArrayChallenge(){
+    /*
+    * Challenge:
+    *
+    * Create an Array of your five favorite games - be it board games, card games, or video games.
+    * Change a element within the Array, and print out the second game.
+    *
+    * Transform the array to a list that can change its contents, and add two more games you'd like to play or finish.
+    *
+    * Then remove a game you're played most recently.
+    *
+    * Finally, print out the list of games you ended up with!
+    */
+
+    val myFavoriteGamesArray = arrayOf("CS", "Rainbow Six", "LOL", "Valorant", "Among")
+    myFavoriteGamesArray[0] = "CS GO"
+    println(myFavoriteGamesArray[1])
+
+    val myFavoriteGamesList = myFavoriteGamesArray.toMutableList()
+
+    myFavoriteGamesList.add("FIFA")
+    myFavoriteGamesList.add("PES")
+
+    myFavoriteGamesList.remove("Among")
+
+    println(myFavoriteGamesList)
+
+    println("Among" in myFavoriteGamesList)
+}
+
 fun main(arguments: Array<String>) {
 //    introduction()
 //    booleans()
@@ -360,5 +482,9 @@ fun main(arguments: Array<String>) {
 //    nullablesChallenge()
 //    dataTypesAndOperationsChallenge()
 //    dataPairsAndTriples()
-    dataPairsAndTriplesChallenge()
+//    dataPairsAndTriplesChallenge()
+//    arrays()
+//    listOfData()
+    listAndArrayChallenge()
 }
+
