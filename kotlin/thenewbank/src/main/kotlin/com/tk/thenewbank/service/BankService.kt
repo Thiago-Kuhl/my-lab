@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service
 
 @Service
 class BankService(
-    @Qualifier("network")
+    @Qualifier("mock")
     private val dataSource: BankDataSource
 ) {
     fun getBanks(): Collection<Bank> = dataSource.retrieveBanks()
