@@ -17,7 +17,12 @@ import java.util.*
 
 @SpringBootTest
 @AutoConfigureMockMvc
-internal class TaskControllerTest @Autowired constructor(val mockMvc: MockMvc, val objectMapper: ObjectMapper) {
+internal class TaskControllerTest @Autowired constructor(
+    private
+    val mockMvc: MockMvc,
+    private
+    val objectMapper: ObjectMapper
+) {
 
     val baseUrl = "/api/v1/tasks"
     val invalidTaskId = "1234567890"

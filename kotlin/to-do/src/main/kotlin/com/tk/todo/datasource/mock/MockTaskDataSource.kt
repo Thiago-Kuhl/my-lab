@@ -1,6 +1,6 @@
 package com.tk.todo.datasource.mock
 
-import com.tk.todo.datasource.TaskDataRepository
+import com.tk.todo.datasource.repository.TaskDataRepository
 import com.tk.todo.models.Task
 import org.springframework.stereotype.Repository
 import java.time.Instant

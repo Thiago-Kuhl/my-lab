@@ -1,6 +1,6 @@
 package com.tk.todo.service
 
-import com.tk.todo.datasource.TaskDataRepository
+import com.tk.todo.datasource.repository.TaskDataRepository
 import com.tk.todo.models.Task
 import org.springframework.stereotype.Service
 
